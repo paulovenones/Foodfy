@@ -164,6 +164,10 @@ footer p {
     grid-gap: 20px;
 }
 
+.recipe {
+    cursor: pointer;
+}
+
 /* ===MODAL-OVERLAY====*/
 .modal-overlay {
     background-color:rgba(0, 0 ,0 ,0.7);
@@ -178,7 +182,7 @@ footer p {
 .modal-content {
     background-color: #FFFFFF;
     
-    margin: 20vh auto;
+    margin: 16vh auto;
     padding: 30px;
     max-width: 660px;
     border-radius: 16px;
