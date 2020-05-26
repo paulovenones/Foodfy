@@ -5,21 +5,21 @@ const app = express()
 
 app.use(express.static("public"))
 
-app.set("view engine", "html")
+app.set("view engine", "njk")
 
 nunjucks.configure("views", {
     express: app
 })
 
-app.get("/index.html", (req, res) => {
+app.get("/", (req, res) => {
     return res.render("index")
 })
 
-app.get("/about.html", (req, res) => {
+app.get("/about", (req, res) => {
     return res.render("about")
 })
 
-app.get("/recipes.html", (req, res) => {
+app.get("/recipes", (req, res) => {
     return res.render("recipes")
 })
 
