@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="description-box">
+        <div class="description-text">
+            <h1>As melhores receitas</h1>
+            <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+        </div>
+        
+        <img src="/images/chef.png" alt="">
+    </div>
+    
+    <h1 id="most-accessed">Mais acessadas</h1>
+    <div class="top-recipes">
+
+    {% for recipe in recipes %}
+        <div class="recipe" id="{{ recipe.id }}">
+            <img class="recipe-image"src="{{ recipe.image }}" alt="Triplo bacon burguer">
+            <p class="recipe-title">{{ recipe.title }}</p>
+            <p class="by">{{ recipe.author }}</p>
+        </div>
+    {% endfor %}
+        
+    <footer>
+        <p>Todos direitos reservados, receitas Foodfy.</p>
+    </footer>
+{% endblock %}

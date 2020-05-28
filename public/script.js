@@ -1,22 +1,22 @@
 const recipes = document.querySelectorAll(".recipe")
-modalOverlay = document.querySelector(".modal-overlay")
-modalContent = document.querySelector(".modal-content")
+const hideButtons = document.querySelectorAll(".hide-button")
 
-for(let recipe of recipes) {
-    recipe.addEventListener("click", function() {
-        modalOverlay.classList.add("active")
-        const img = recipe.querySelector(".recipe-image")
-        const imgUrl = img.getAttribute('src')
-
-        const title = recipe.querySelector(".recipe-title").textContent
-        const by = recipe.querySelector(".by").textContent
-
-        modalContent.querySelector("img").src = `${imgUrl}`
-        modalContent.querySelector(".modal-title").textContent = `${title}`
-        modalContent.querySelector(".by-modal").textContent = `${by}`
+for(let hideButton of hideButtons) {
+    hideButton.addEventListener("click", function() {
+        const buttonId = hideButton.getAttribute("id")
+        const list = document.querySelector(`.recipe-${buttonId}_list`)
+        if(list.classList.contains("hidden")) {
+            list.classList.remove("hidden")
+        } else {
+            list.classList.add("hidden")
+        }
     })
 }
 
-document.querySelector('.close-modal').addEventListener("click", function() {
-    modalOverlay.classList.remove('active')
-})
+
+for(let recipe of recipes) {
+    recipe.addEventListener("click", function() {
+        const recipeId = recipe.getAttribute("id")
+        window.location.href = `/recipes/${recipeId}`
+    })
+}

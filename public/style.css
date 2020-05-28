@@ -168,58 +168,90 @@ footer p {
     cursor: pointer;
 }
 
-/* ===MODAL-OVERLAY====*/
-.modal-overlay {
-    background-color:rgba(0, 0 ,0 ,0.7);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
-}
-
-.modal-content {
-    background-color: #FFFFFF;
-    
-    margin: 16vh auto;
-    padding: 30px;
-    max-width: 660px;
-    border-radius: 16px;
-}
-
-.modal-content img {
-    height: 200px;
-    width: 600px;
+/*===RECIPE_INFO===*/
+#recipe-image_info {
+    width: 940px;
+    height: 280px;
     border-radius: 15px;
+
+    margin-bottom: 50px;
 }
 
-.modal-title {
-    margin-top: 20px;
-    margin-bottom: 5px;
+#recipe-title_info {
+    font-size: 36px;
+    line-height: 42px;
 
+    margin-bottom: 4px;
+}
+
+#recipe-author_info {
+    font-size: 20px;
+    line-height: 24px;
+    color: #777777;
+
+    margin-bottom: 50px;
+}
+
+.recipe-subtitle_section_info {
+    display: flex;
+    margin-bottom: 20px;
+
+    align-items: baseline;
+}
+
+.recipe-subtitle_info {
     font-size: 24px;
     line-height: 28px;
+
+    text-align: left;
+    margin-right: 8px;
 }
 
-.by-modal {
-    margin-bottom: 60px;
-
-    color: #777777;
-    font-size: 18px;
-    line-height: 21px;
-}
-
-.close-modal {
-    font-size: 16px;
-    line-height: 19px;
+.hide-button {
+    font-size: 12px;
+    line-height: 14px;
     color: #999999;
-
+    
     cursor: pointer;
 }
 
-/* === MODAL-OVERLAY ACTIVE===*/
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
+#list-ingredients, #list-preparation {
+    list-style: none;
+    margin-bottom: 39px;
+}
+
+#list-ingredients li, #list-preparation li {
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+
+    text-align: left;
+    list-style-position: inside;
+
+}
+
+#list-ingredients li::before, #list-preparation li::before {
+    content: "\2022";   
+    color: #111111;  
+    display: inline-block;  
+    width: 0.55em; 
+    margin-left: unset; 
+    font-weight: bold; 
+    font-size: 25px; 
+}
+
+
+#list-additional {
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    
+    text-align: left;
+}
+
+/*===HIDDEN===*/
+.recipe-ingredients_list.hidden, .recipe-preparation_list.hidden, .recipe-additional_list.hidden {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
 }

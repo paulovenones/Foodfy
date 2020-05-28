@@ -4,8 +4,10 @@
     <head>
     {% block head %}
         <title>Foodfy</title>
-        <link rel="stylesheet" href="style.css">
-    {% endblock %}
+        {% block style %}
+            <link rel="stylesheet" href="style.css">
+        {% endblock %}
+{% endblock %}
     </head>
 
     <body>
@@ -24,11 +26,12 @@
     {% block content %}{% endblock %}
 
 
-        <footer>
-            <p>Todos direitos reservados, receitas Foodfy.</p>
-        </footer>
+    <footer>
+        <p>Todos direitos reservados, receitas Foodfy.</p>
+    </footer>
 
-
+    {% block script %}
         <script src="script.js"></script>
+    {% endblock %}
     </body>
 </html>

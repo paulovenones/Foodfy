@@ -1,0 +1,56 @@
+{% extends "layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="../style.css">
+{% endblock %}
+
+{% block recipes %}
+    <a id="on-pressed_recipes"href="/recipes">Receitas</a>
+{% endblock %}
+
+{% block content %}
+
+
+<img src="{{recipe.image}}" alt="{{recipe.title}}" id="recipe-image_info">
+
+<h1 id="recipe-title_info">{{ recipe.title }}</h1>
+<p id="recipe-author_info">{{ recipe.author }}</p>
+
+<div class="recipe-ingredients_info">
+    <div class="recipe-subtitle_section_info">
+        <h1 class="recipe-subtitle_info">Ingredientes</h1>
+        <h1 class="hide-button" id="ingredients">ESCONDER</h1>
+    </div>
+    <ul class="recipe-ingredients_list" id="list-ingredients">
+        {% for ingredient in recipe.ingredients %}
+            <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="recipe-preparation_info">
+    <div class="recipe-subtitle_section_info">
+        <h1 class="recipe-subtitle_info">Modo de preparo</h1>
+        <h1 class="hide-button" id="preparation">ESCONDER</h1>
+    </div>
+    <ul class="recipe-preparation_list" id="list-preparation">
+        {% for preparation in recipe.preparation %}
+            <li>{{ preparation }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% if recipe.information %}
+    <div class="recipe-additional_info">
+        <div class="recipe-subtitle_section_info">
+            <h1 class="recipe-subtitle_info">Informações adicionais</h1>
+            <h1 class="hide-button" id="additional">ESCONDER</h1>
+        </div>
+        <p class="recipe-additional_list" id="list-additional">{{  recipe.information }}</p>
+    </div>
+{% endif %}
+{% endblock %}
+
+{% block script%}
+    <script src="../script.js"></script>
+{% endblock %}
